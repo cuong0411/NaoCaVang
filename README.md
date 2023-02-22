@@ -6,14 +6,24 @@
 
 ```css
 *,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-* {
+*::after,
+*::before {
   margin: 0;
   padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  /*
+  100% -> 16px (default of browser)
+  62.5% -> 10px
+  */
+  font-size: 62.5%;
+}
+
+body {
+  /* better practice than putting in the universal selector */
+  box-sizing: border-box;
 }
 ```
 
